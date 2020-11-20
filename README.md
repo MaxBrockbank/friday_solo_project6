@@ -53,10 +53,12 @@
 
 | Behavior  | Input | Output  |
 | :--- | :---: |  :---: |
-|1. Make call on ExchangeRate API| | Promise|
+|1. Make ExchangeRate API request| | Promise|
 |2. Import API call response to main.js| | |
 |3. Check if the API call response is an error object|||
 |4. If not an error object, grab specific country conversion rate| country_code = "EUR" | conversion_rate=0.844|
+|5. HTML dropdown selection with options whose values are set to a corresponding country code| Europe | "EUR"|
+|6. UI Logic to grab the value of the currently selected dropdown option to be set to the variable `code` attached to a button event listener|||
 
 </details>
 ## Legal
