@@ -7,11 +7,13 @@ import ExchangeService from './services/exchangeService.js';
 $(document).ready(function(){
   let countryArray;
   let ratesArray;
+
   const currencies = ExchangeService.calculateExchange()
     .then((callResponse) => {
       if(callResponse instanceof Error){
         throw Error (`ExchangeRate API error: ${exchangeResponse.message}`)
       }
+      console.log(callResponse);
       countryArray = Object.keys(callResponse.conversion_rates);
       ratesArray = Object.values(callResponse.conversion_rates);
       let optionsArray = [];
@@ -23,6 +25,7 @@ $(document).ready(function(){
     .catch((error)=>{
       alert(`An Error Occured: ${error}`);
     })
+
   $("#convert").on('submit', (event) => {
     event.preventDefault();
     let code = $("#country option:selected");

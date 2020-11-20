@@ -7,6 +7,8 @@
 
 # Description
 
+This project uses the ExchangeRate API to convert a user input amount in USD to a select option from the dropdown, which includes all options supported by this API. This project's aim is to show the use of the Fetch API, proper error handling, and writing clean/modular code.
+
 ## Required Technologies
 <details>
 <summary>See details</summary>
