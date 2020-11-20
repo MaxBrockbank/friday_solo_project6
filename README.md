@@ -10,29 +10,35 @@
 ## Required Technologies
 <details>
 <summary></summary>
+
 * Node.js / Webpack
 * Modern web broswer
 * Text editor
 * ExchangeRate-API key _(see set-up instructions below)_
+
 </details>
 
 ## Set-up Instructions
 <details>
 <summary></summary>
+
 1. Clone this repo to your computer
 2. Go to the [ExchangeRate-API](https://www.exchangerate-api.com/) website and sign up for an API key (the free plan is all you need).
 3. Create a `.env` file in the highest level of the project directory and create a global variable called `API_KEY` and set it equal to your api key that you just signed up for. Should look like: `API_KEY = (_your api key here_)
 4. Run npm i to install node_modules/
+
 </details>
 
 ## Technologies Used
 <details>
 <summary></summary>
+
 * HTML 
 * CSS / Bootstrap
 * JavaScript / jQuery
 * Node.js / Webpack
 * ExchangeRate API
+
 </details>
 
 ## Known Bugs
@@ -44,8 +50,14 @@
 ## Specs
 <details>
 <summary></summary>
-| Test  | Input | Output  |
-| :---: | :---: |  :---:  |
+
+| Behavior  | Input | Output  |
+| :--- | :---: |  :---: |
+|1. Make call on ExchangeRate API| | Promise|
+|2. Import API call response to main.js| | |
+|3. Check if the API call response is an error object|||
+|4. If not an error object, grab specific country conversion rate| country_code = "EUR" | conversion_rate=0.844|
+
 </details>
 ## Legal
 * Copyright © 2020 Max Brockbank
