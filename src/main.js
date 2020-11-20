@@ -22,7 +22,7 @@ $(document).ready(function(){
         for(let i = 0; i < countryArray.length; i++){
           console.log(countryArray[i]);
           if(code.val() === countryArray[i]){
-            output = `${((ratesArray[i]) * USD)} ${countryArray[i]}`;
+            output = `<h2>${USD} USD is equal to ${((ratesArray[i]) * USD)} ${countryArray[i]}</h2>`;
             break;
           } else if(code.val() === "none"){
             output = `Nothing selected, please select a valid coversion.`;
@@ -31,11 +31,13 @@ $(document).ready(function(){
             console.log("Fail")
           }
         }
-        result.text(output);
-        console.log(code.val());
-        console.log(countryArray);
-        console.log(ratesArray);
-        console.log(USD);
+        result.html(output);
+        $("#country").val("none");
+        $("#USD").val("");
+        // console.log(code.val());
+        // console.log(countryArray);
+        // console.log(ratesArray);
+        // console.log(USD);
       })
       .catch((error)=>{
         console.log(error);
