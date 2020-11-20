@@ -36,18 +36,18 @@ $(document).ready(function(){
         for(let i = 0; i < countryArray.length; i++){
           console.log(countryArray[i]);
           if(code.val() === countryArray[i]){
-            const formatter1 = new Intl.NumberFormat('en-US', {
+            const usdFormatter = new Intl.NumberFormat('en-US', {
               style: 'currency',
               currency: 'USD',
               minimumFractionDigits:2
             })
-            const formatter2 = new Intl.NumberFormat('en-US', {
+            const otherFormatter = new Intl.NumberFormat('en-US', {
               style: 'currency',
               currency: `${countryArray[i]}`,
               minimumFractionDigits:2
             })
-            let toConvert = formatter1.format(USD);
-            let converted = formatter2.format(((ratesArray[i]) * USD))
+            let toConvert = usdFormatter.format(USD);
+            let converted = otherFormatter.format(((ratesArray[i]) * USD))
             output = `<h2>${toConvert} is equal to ${converted}</h2>`;
             break;
           } else if(code.text() === "none"){
