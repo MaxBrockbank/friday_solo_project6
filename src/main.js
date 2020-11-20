@@ -5,7 +5,12 @@ import './css/styles.css';
 import ExchangeService from './services/exchangeService.js';
 
 $(document).ready(function(){
-    let code="EUR";
+
+  $("#convert").on('submit', (event) => {
+    event.preventDefault();
+    let code = $("#country option:selected");
+    const USD = $("#USD").val();
+    const result = $("#result");
     ExchangeService.calculateExchange()
       .then((exchangeResponse) => {
         if(exchangeResponse instanceof Error){
@@ -13,13 +18,28 @@ $(document).ready(function(){
         }
         const countryArray = Object.keys(exchangeResponse.conversion_rates);
         const ratesArray = Object.values(exchangeResponse.conversion_rates);
-        for(let i = 0; i <= countryArray.length; i++){
-          if(code === countryArray[i]){
-            console.log({"country": countryArray[i], "conversion rate":ratesArray[i]});
+        let output;
+        for(let i = 0; i < countryArray.length; i++){
+          console.log(countryArray[i]);
+          if(code.val() === countryArray[i]){
+            output = `${((ratesArray[i]) * USD)} ${countryArray[i]}`;
+            break;
+          } else if(code.val() === "none"){
+            output = `Nothing selected, please select a valid coversion.`;
+          } else {
+            output = `${code.val()} conversion is not available. Sorry about that. Please select another currency conversion.`;
+            console.log("Fail")
           }
         }
+        result.text(output);
+        console.log(code.val());
+        console.log(countryArray);
+        console.log(ratesArray);
+        console.log(USD);
       })
       .catch((error)=>{
         console.log(error);
       })
+  })
+    
 })
