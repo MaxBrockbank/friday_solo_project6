@@ -36,7 +36,7 @@ $(document).ready(function(){
 				});
 				let toConvert = usdFormatter.format(USD);
 				let converted = otherFormatter.format(((ratesArray[i]) * USD));
-				output = `<h2>${toConvert} is equal to ${converted}</h2>`;
+				output = `<h2>${toConvert} is equal to <strong>${converted}</strong></h2>`;
 				break;
 			} else if(code.text() === "none"){
 				output = `Nothing selected, please select a valid coversion.`;
