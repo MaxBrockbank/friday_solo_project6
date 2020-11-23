@@ -62,6 +62,10 @@ This project uses the ExchangeRate API to convert a user input amount in USD to 
 |4. If not an error object, grab specific country conversion rate| country code = "EUR" | conversion rate=0.844|
 |5. HTML dropdown selection with options whose values are set to a corresponding country code| Europe | "EUR"|
 |6. UI Logic to grab the value of the currently selected dropdown option to be set to the variable `code` attached to a button event listener|||
+|7. Use `code` variable to get exchange rate and mulitple against user input USD amount|$100 * 0.844|€84.32|
+|8. Append converted currancy amount to the DOM|||
+|9. Add all API exchange rate options to drop down|||
+|10. Cache API results in session storage so we only make one API call. (If error testing the API call, you'll need to open up a new tab in your browser since the calls data is being stored in session storage which is checked for the exchange rate data before an API call is made.)|||
 
 </details>
 
