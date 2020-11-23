@@ -63,7 +63,7 @@ $(document).ready(function(){
 					processCallData(callResponse);
 				})
 				.catch((error)=>{
-					alert(`An Error Occured: ${error}`);
+					alert(`An Error Occured with the ExchangeRate API - ${error}`);
 				});
 		}
 	})();
